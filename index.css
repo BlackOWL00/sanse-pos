@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster|Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Roboto+Slab&display=swap');
 body{
-    background: url("img/bg.jpg");
+    background-color: #f2f2f2;
     background-size: 100%;
     background-repeat: no-repeat;
 }
 .header{
-    color: white;
+    color:#595959;
     padding-left: 10px;
     padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 .header img{
     height: 40px;
@@ -15,7 +16,7 @@ body{
 }
 .header span{
     font-family: 'lobster', cursive;
-    font-size: 45px;
+    font-size: 35px;
 }
 .intro{
     position: relative;
@@ -28,7 +29,7 @@ body{
     display: inline-block;
     margin: auto;
     max-width: 500px;
-    padding-top: 40px;
+    padding: auto;
 }
 .milktea img{
     width: 250px;
@@ -38,10 +39,12 @@ body{
     display: inline-block;
     margin: auto;
     max-width: 500px;
+    padding: auto;
+
 }
 #motto-text{
     margin-top: 0px;
-    color: white;
-    font-family: 'Pacifico', cursive;
-    font-size: 50px;
+    color:#595959;
+    font-family: 'Roboto Slab', serif;
+    font-size: 55px;
 }

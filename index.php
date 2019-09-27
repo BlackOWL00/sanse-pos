@@ -10,11 +10,11 @@
 <body>
     <div class="header"><img src="img/icon.svg" alt="coffe-bean" id="icon"><span id="nav-label"> Sanse Cafe</span></div>
     <div class = "intro">
-        <div class="milktea">
-            <img src="img/milktea.svg" alt="milktea">
-        </div>
         <div class="motto">
             <h1 id="motto-text">Do It Better Than Your Best Yesterday</h1>
+        </div>
+        <div class="milktea">
+            <img src="img/milktea.svg" alt="milktea">
         </div>
         <div class="login"></div>
     </div>
