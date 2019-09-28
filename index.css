@@ -26,9 +26,9 @@ body{
     padding: 30px;
 }
 .milktea{
+    border: 2px solid black;
     display: inline-block;
     margin: auto;
-    max-width: 500px;
     padding: auto;
 }
 .milktea img{
@@ -38,13 +38,17 @@ body{
 .motto{
     display: inline-block;
     margin: auto;
-    max-width: 500px;
+    width: 500px;
     padding: auto;
-
 }
 #motto-text{
     margin-top: 0px;
     color:#595959;
     font-family: 'Roboto Slab', serif;
     font-size: 55px;
+}
+.signin, form{
+    display: block;
+    margin: auto;
+    width: 100px;
 }
