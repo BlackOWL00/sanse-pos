@@ -17,14 +17,12 @@
             <img src="img/milktea.svg" alt="milktea">
         </div>
         <div class="signin">
-                <div class="input">
-                    <label>Username</label>
-                    <input type="text" name="uname">
-                </div>
-                <div class="input">
-                    <label>Password</label>
-                    <input type="password" name="pw">
-                </div>
+            <form>
+                <label>Username</label>
+                <input type="text" name = 'uname'>
+                <label>Password</label>
+                <input type="password" name = 'pass'>
+            </form>
         </div>
     </div>
 </body>

@@ -26,10 +26,10 @@ body{
     padding: auto;
 }
 .milktea{
-    border: 2px solid black;
     display: inline-block;
     margin: auto;
     padding: auto;
+    height: 260px;
 }
 .milktea img{
     width: 250px;
@@ -39,6 +39,7 @@ body{
     display: inline-block;
     margin: auto;
     width: 500px;
+    height: 260px;
     padding: auto;
 }
 #motto-text{
@@ -48,11 +49,10 @@ body{
     font-size: 55px;
 }
 .signin{
+    border: 2px #ffbf80 solid;
     display: inline-block;
     margin: auto;
     width: 300px;
+    height: 260px;
     padding: auto;
-}
-form{
-    width: 200px;
 }
