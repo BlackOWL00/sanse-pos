@@ -17,7 +17,6 @@
             <img src="img/milktea.svg" alt="milktea">
         </div>
         <div class="signin">
-            <form>
                 <div class="input">
                     <label>Username</label>
                     <input type="text" name="uname">
@@ -26,7 +25,6 @@
                     <label>Password</label>
                     <input type="password" name="pw">
                 </div>
-            </form>
         </div>
     </div>
 </body>

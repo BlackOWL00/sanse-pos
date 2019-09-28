@@ -23,7 +23,7 @@ body{
     display: block;
     width: 100%;
     background: transparent;
-    padding: 30px;
+    padding: auto;
 }
 .milktea{
     border: 2px solid black;
@@ -47,8 +47,12 @@ body{
     font-family: 'Roboto Slab', serif;
     font-size: 55px;
 }
-.signin, form{
-    display: block;
+.signin{
+    display: inline-block;
     margin: auto;
-    width: 100px;
+    width: 300px;
+    padding: auto;
+}
+form{
+    width: 200px;
 }
