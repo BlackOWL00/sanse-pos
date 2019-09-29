@@ -18,10 +18,9 @@
         </div>
         <div class="signin">
             <form>
-                <label>Username</label>
-                <input type="text" name = 'uname'>
-                <label>Password</label>
-                <input type="password" name = 'pass'>
+                <h1 class = "signinfont">Sign In</h1>
+                <input type="text" name = 'uname' placeholder = "Username">
+                <input type="password" name = 'pass' placeholder = "Password">
             </form>
         </div>
     </div>
