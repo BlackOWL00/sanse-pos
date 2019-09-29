@@ -17,7 +17,7 @@
             <img src="img/milktea.svg" alt="milktea">
         </div>
         <div class="signin">
-            <form>
+            <form class="testform">
                 <h1 class = "signinfont">Sign In</h1>
                 <input type="text" name = 'uname' placeholder = "Username">
                 <input type="password" name = 'pass' placeholder = "Password">
