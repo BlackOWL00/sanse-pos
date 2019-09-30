@@ -145,3 +145,10 @@ button{
 .policytext{
     text-align: justify;
 }
+.secondary{
+    display: block;
+    width: 70%;
+    height: 400;
+    margin: auto 50px auto 50px;
+    padding: 10px;
+}

@@ -8,7 +8,10 @@
     <title>Camp Boomy Cafe</title>
 </head>
 <body>
-    <div class="header"><img src="img/icon.svg" alt="coffe-bean" id="icon"><span id="nav-label"> Camp Boomy Cafe</span></div>
+    <div class="header">
+        <img src="img/icon.svg" alt="coffe-bean" id="icon">
+        <span id="nav-label"> Camp Boomy Cafe</span>
+    </div>
     <div class = "intro">
         <div class="motto">
             <h1 id="motto-text">Do It Better Than Your Best Yesterday</h1>
@@ -48,6 +51,10 @@
                     </p>
                 </div>
             </div>
+    </div>
+    <div class="secondary">
+        <span id="aboutheader">Our Story</span>
+        <p class = "policytext"></p>
     </div>
 </body>
 </html>
