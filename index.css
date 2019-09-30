@@ -28,9 +28,11 @@ body{
     background: transparent;
 }
 .motto{
+    display: inline-block;
     width: 500px;
     height: 260px;
     padding: auto;
+    vertical-align: top;
 }
 #motto-text{
     margin-top: 0px;
@@ -40,7 +42,9 @@ body{
 }
 
 .milktea{
-    padding: auto;
+    display: inline-block;
+    padding: 5px;
+    vertical-align: top;
     height: 260px;
 }
 .milktea img{
@@ -48,23 +52,41 @@ body{
     height: 225px;
 }
 .signin{
-    border: 10px #ffbf80 solid;
+    text-align: center;
+    border: 10px #dfa367 solid;
     display: inline-block;
-    margin: auto;
-    width: 300px;
+    margin-left: 50px;
+    width: 350px;
     height: 260px;
     padding: 10px;
-    top: 0;
+    vertical-align: top;
 }
 .testform{
-    border: 2px solid black;
-    height: 100%;
-    width: 100%;
-    padding: 10px;
+    margin: auto;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
 }
 .signinfont{
-    text-align: center;
     color: #595959;
     font-family: 'Bree Serif', serif;
     font-size: 50px;
+}
+input{ 
+    border: 2px solid #dfa367;
+    margin-bottom: 20px;
+    width: 180px;
+    font-size: 30px;
+    height: 30px;
+}
+input::placeholder{
+    color: #757070;
+    opacity: 1;
+}
+button{
+    width: 100px;
+    height: 30px;
+    float: right;
+    background-color: #dfa367;
+    color: #f2f2f2;
 }

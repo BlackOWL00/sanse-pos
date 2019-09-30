@@ -17,10 +17,11 @@
             <img src="img/milktea.svg" alt="milktea">
         </div>
         <div class="signin">
+            <span class = "signinfont">Sign In</span>
             <form class="testform">
-                <h1 class = "signinfont">Sign In</h1>
                 <input type="text" name = 'uname' placeholder = "Username">
                 <input type="password" name = 'pass' placeholder = "Password">
+                <button type="submit">Submit</button>
             </form>
         </div>
     </div>
