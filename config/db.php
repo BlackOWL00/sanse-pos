@@ -5,7 +5,7 @@ $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, '');
 	#Check the connection
 if(mysqli_connect_errno()){
 		#Connection Failed
-	console.log('Connection Failed!');
+	echo 'Connection Failed!';
 }
 	//check the existence of the db
 $db = mysqli_select_db($conn, DB_NAME);
@@ -13,9 +13,9 @@ if(empty($db)){
 	$dbcreate = "CREATE DATABASE dbcampbc";
 	$check = mysqli_query($conn, $dbcreate);
 	if(!($check)){
-		console.log("Database Create ERROR");
+		echo "Database Create ERROR";
 	}else{
-		console.log( "Database Created!");
+		echo "Database Created!";
 		fn_create_tables($conn);
 	}
 }else{

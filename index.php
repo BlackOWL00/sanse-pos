@@ -1,6 +1,6 @@
 <?php
-require config/config.php;
-require config/db.php;
+require "config/config.php";
+require "config/db.php";
 $query = 'SELECT * FROM tbl_accounts';
 ?>
 <!DOCTYPE html>
