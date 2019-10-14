@@ -9,19 +9,23 @@
     <title>Dashboard</title>
 </head>
 <body>
-<div class="main">
 <div id ="mySideNav" class="sidebar">
+        <div class="sidebarlogo">
+            <img src="img/boomy.png" alt="BOOMY" id = "circleimg">
+            <h1>Camp Boomy Cafe</h1>
+        </div>
         <ul class="list-group">
-            <a href="dashboard.php"><li class="list-group-item active">Dashboard</li></a>
-            <a href="pos.php"><li class="list-group-item">Point of Sales</li></a>
-            <a href="items.php"><li class="list-group-item">Items</li></a>
-            <a href="records.php"><li class="list-group-item">Records</li></a>
+            <a href="dashboard.php"><li class="list-group-item">Dashboard</li></a>
+            <a href="#"><li class="list-group-item">Point of Sales</li></a>
+            <a href="#"><li class="list-group-item">Items</li></a>
+            <a href="#"><li class="list-group-item">Records</li></a>
+            <a href="#"><li class="list-group-item">Settings</li></a>
             <a href="javascript:void(0)" class="closebtn" onclick="fnCloseNav()">&times;</a>
         </ul>
 </div>
 <div class="header">
         <a href="dashboard.php">
-        <img src="img/icon.svg" alt="coffee-bean" id="icon">
+        <img src="img/boomy.png" alt="Boomy" id="icon">
         <span> Camp Boomy Cafe</span>
         </a>
 </div>
@@ -31,7 +35,8 @@
 </body>
 <script>
     function fnOpenNav(){
-        document.getElementById("mySideNav").style.width = "310px";
+        document.getElementById("mySideNav").style.width = "335px";
+
     }
 
     function fnCloseNav(){

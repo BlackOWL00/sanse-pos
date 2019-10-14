@@ -13,9 +13,10 @@ body{
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
-.header img{
-    height: 40px;
-    width: 40px;
+#icon{
+    height: 60px;
+    width: 60px;
+    margin: 10px;
 }
 .header span{
     font-family: 'lobster', cursive;
@@ -43,7 +44,6 @@ body{
     font-family: 'Roboto Slab', serif;
     font-size: 55px;
 }
-
 .milktea{
     display: inline-block;
     padding: 5px;

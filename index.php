@@ -13,7 +13,7 @@ require "config/db.php";
 </head>
 <body>
     <div class="header">
-        <img src="img/icon.svg" alt="coffee-bean" id="icon">
+        <img src="img/boomy.png" alt="boomy" id="icon">
         <span> Camp Boomy Cafe</span>
     </div>
     <div class = "intro">
