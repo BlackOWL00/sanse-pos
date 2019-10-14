@@ -1,7 +1,6 @@
 <?php
 require "config/config.php";
 require "config/db.php";
-$query = 'SELECT * FROM tbl_accounts';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +13,7 @@ $query = 'SELECT * FROM tbl_accounts';
 </head>
 <body>
     <div class="header">
-        <img src="img/icon.svg" alt="coffe-bean" id="icon">
+        <img src="img/icon.svg" alt="coffee-bean" id="icon">
         <span id="nav-label"> Camp Boomy Cafe</span>
     </div>
     <div class = "intro">
@@ -26,10 +25,10 @@ $query = 'SELECT * FROM tbl_accounts';
         </div>
         <div class="signin">
             <span class = "signinfont">Sign In</span>
-            <form class="testform">
-                <input type="text" name = 'uname' placeholder = "Username">
-                <input type="password" name = 'pass' placeholder = "Password">
-                <button type="submit">Submit</button>
+            <form method = 'POST' class="testform" action = "<?php echo $_SERVER['PHP_SELF'];?>">
+                <input type="text" name = "name" placeholder = "Username">
+                <input type="password" name = "pw" placeholder = "Password">
+                <button type="submit" name = "submit">Submit</button>
             </form>
         </div>
     </div>
