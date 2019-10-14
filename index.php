@@ -14,7 +14,7 @@ require "config/db.php";
 <body>
     <div class="header">
         <img src="img/icon.svg" alt="coffee-bean" id="icon">
-        <span id="nav-label"> Camp Boomy Cafe</span>
+        <span> Camp Boomy Cafe</span>
     </div>
     <div class = "intro">
         <div class="motto">

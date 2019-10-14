@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster|Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
 body{
     background-color: #f2f2f2;
     background-size: 100%;
@@ -12,17 +13,28 @@ body{
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
-.header a{
-    text-decoration: none;
-    color: inherit;
-}
 .header img{
     height: 40px;
     width: 40px;
 }
+.header a{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: inherit;
+    }
 .header span{
     font-family: 'lobster', cursive;
     font-size: 35px;
+}
+.header a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+.main{
+    padding: 0px;
+    margin: 0px;
+    position: relative;
 }
 .intro{
     position: relative;
@@ -34,7 +46,30 @@ body{
     padding-bottom: 50px;
 }
 .sidebar{
-    height: 100%;
-    width: 0%;
-    display: none; 
+    background-color: transparent;
+    height: 100%; 
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0; 
+    left: 0;
+    overflow-x: hidden; 
+    padding-top: 80px;
+    transition: 0.5s;
+}
+#sidebar-btn{
+    font-size: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.closebtn{
+    font-size: 40px;
+    margin-left: 280px;
+}
+.list-group a, .list-group a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+.active{
+    background-color: #dfa367;
 }

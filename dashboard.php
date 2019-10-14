@@ -9,24 +9,33 @@
     <title>Dashboard</title>
 </head>
 <body>
+<div class="main">
+<div id ="mySideNav" class="sidebar">
+        <ul class="list-group">
+            <a href="dashboard.php"><li class="list-group-item active">Dashboard</li></a>
+            <a href="pos.php"><li class="list-group-item">Point of Sales</li></a>
+            <a href="items.php"><li class="list-group-item">Items</li></a>
+            <a href="records.php"><li class="list-group-item">Records</li></a>
+            <a href="javascript:void(0)" class="closebtn" onclick="fnCloseNav()">&times;</a>
+        </ul>
+</div>
 <div class="header">
         <a href="dashboard.php">
         <img src="img/icon.svg" alt="coffee-bean" id="icon">
-        <span id="nav-label"> Camp Boomy Cafe</span>
+        <span> Camp Boomy Cafe</span>
         </a>
-    </div>     
-    <div class="main">
-    <div class="sidebar">
-        <ul class="pagelinks list-group">
-           <a href="dashboard.php"><li class="list-group-item">Dashboard</li></a>
-           <a href="pos.php"><li class="list-group-item">Point of Sales</li></a>
-           <a href="items.php"><li class="list-group-item">Items</li></a>
-           <a href="records.php"><li class="list-group-item">Records</li></a>
-        </ul>
-    </div>
-    <div class = "intro">
-          
-    </div>
-    </div>
+</div>
+<div class="main">
+    <span id = "sidebar-btn" onclick = "fnOpenNav()">&#9776;</span>
+</div>
 </body>
+<script>
+    function fnOpenNav(){
+        document.getElementById("mySideNav").style.width = "310px";
+    }
+
+    function fnCloseNav(){
+        document.getElementById("mySideNav").style.width = "0px";
+    }
+</script>
 </html>
