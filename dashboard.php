@@ -31,6 +31,9 @@
 </div>
 <div class="main">
     <span id = "sidebar-btn" onclick = "fnOpenNav()">&#9776;</span>
+    <div class="graph1">
+        <canvas id="lineGraph"></canvas>
+    </div>
 </div>
 </body>
 <script>
@@ -43,4 +46,5 @@
         document.getElementById("mySideNav").style.width = "0px";
     }
 </script>
+<script src=""></script>
 </html>

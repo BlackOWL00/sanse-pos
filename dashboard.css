@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster|Roboto+Slab&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
 body{
     background-color:#f2f2f2;
     background-size: 100%;
@@ -67,6 +68,9 @@ body{
     text-align: center;
     margin: auto;
     margin-bottom: 30px;
+}
+.sidebarlogo h1{
+    font-family: 'Fredoka One', cursive;
 }
 #circleimg{
     margin: auto;
