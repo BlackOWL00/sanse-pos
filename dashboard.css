@@ -79,6 +79,7 @@ body{
     border-radius: 100px;
 }
 .list-group-item{
+    color:#595959;
     text-align: center;
     font-size: 30px;
    font-family: 'Fredoka One', cursive;
@@ -102,4 +103,8 @@ body{
     vertical-align: top;
     width: 60%;
 }
-.graph2{}
+.graph2{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+}

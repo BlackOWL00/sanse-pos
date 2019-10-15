@@ -6,7 +6,7 @@ function fnOpenNav(){
 function fnCloseNav(){
     document.getElementById("mySideNav").style.width = "0px";
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////
 var ctx = document.getElementById('lineGraph');
 var myChart = new Chart(ctx, {
     type: 'line',
@@ -34,3 +34,5 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+/////////////////////////////////////////////////////////////////////////////////////////////////
+var ctx1 = document.getElementById('');

@@ -12,8 +12,8 @@ require "config/db.php";
     <title>Camp Boomy Cafe</title>
 </head>
 <body>
-    <div class="header">
-        <img src="img/boomy.png" alt="boomy" id="icon">
+    <div class="header0">
+        <img src="img/boomy.png" alt="boomy">
         <span> Camp Boomy Cafe</span>
     </div>
     <div class = "intro">
