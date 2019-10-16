@@ -8,16 +8,10 @@ body{
     margin-right: 0px;
 }
 .header{
-    max-width: 100px;
     color:#595959;
     padding-left: 10px;
     padding-bottom: 20px;
     margin-bottom: 20px;
-}
-.header img{
-    height: 50px;
-    width: 50px;
-    margin: 10px;
 }
 .header span{
     font-family: 'lobster', cursive;

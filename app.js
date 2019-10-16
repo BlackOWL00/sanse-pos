@@ -19,6 +19,12 @@ var myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 0.2)'
             ],
             borderColor: [
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 3
@@ -35,4 +41,21 @@ var myChart = new Chart(ctx, {
     }
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////
-var ctx1 = document.getElementById('');
+var ctx = document.getElementById('donutGraph');
+var donutchart = new Chart(ctx , {
+    type: 'doughnut',
+    data: {
+        labels: ["Beverages", "Desserts", "Meals", "Bundle-Meals"],
+        datasets: [{
+            label: "Serving Percentage",
+            data: [100, 20, 15, 50],
+            backgroundColor: ['#ffdab3','#ffc180','#ffa94d','#ff901a']
+        }],
+        options: {
+            cutoutPercentage: 50,
+            animation: {
+                animatedScale: true
+            }
+        }
+    }
+});
