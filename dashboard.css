@@ -44,7 +44,7 @@ body{
     padding-bottom: 50px;
 }
 .sidebar{
-    background-color: #f2f2f2;
+    background-color: whitesmoke;
     height: 100%; 
     width: 0;
     position: fixed;
@@ -94,7 +94,7 @@ body{
     color: inherit;
 }
 .burger{
-    width: 15%;
+    width: 17%;
     display: inline-block;
     vertical-align: top;
 }
@@ -107,4 +107,15 @@ body{
     display: inline-block;
     vertical-align: top;
     width: 20%;
+}
+.topOrder{
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Fredoka One', cursive;
+    font-size: 35px;
+    color: #595959;
+}
+.topOrder img {
+    height: 10%;
+    width: 10%;
 }

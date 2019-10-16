@@ -39,7 +39,10 @@
     </div>
     <div class="graph2">
         <canvas id="donutGraph"></canvas>
-        <canvas id="barGraph"></canvas>
+        <div class="topOrder">
+            <span><img src="img/stonks.svg" alt="Stoinks"> Top Orders</span>
+            
+        </div>    
     </div>
 </div>
 </body>
