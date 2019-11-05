@@ -80,7 +80,7 @@ body{
 }
 .list-group-item{
     color:#595959;
-    text-align: center;
+    text-align: left;
     font-size: 30px;
    font-family: 'Fredoka One', cursive;
 }

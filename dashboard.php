@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="dashboard.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Dashboard</title>
 </head>
@@ -41,10 +42,93 @@
         <canvas id="donutGraph"></canvas>
         <div class="topOrder">
             <span><img src="img/stonks.svg" alt="Stoinks"> Top Orders</span>
-            
         </div>    
     </div>
 </div>
 </body>
-<script src = "app.js"></script>
+<script>
+function fnOpenNav(){
+    document.getElementById("mySideNav").style.width = "335px";
+
+}
+
+function fnCloseNav(){
+    document.getElementById("mySideNav").style.width = "0px";
+}
+////////////////////////////////////////////////////////////////////////////////////////////////
+var ctx = document.getElementById('lineGraph');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        datasets: [{
+            label: 'Sales of the Week',
+            data: [12, 19, 3, 5, 2, 3, 20],
+            backgroundColor: [
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 3
+        }]
+    },
+    options: {
+        title: {
+            display: true,
+            text: 'Sales Monitor',
+            fontSize: 25
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+/////////////////////////////////////////////////////////////////////////////////////////////////
+var ctx = document.getElementById('donutGraph');
+var donutchart = new Chart(ctx , {
+    type: 'doughnut',
+    data: {
+        labels: ["Beverages", "Desserts", "Meals", "Bundle-Meals"],
+        datasets: [{
+            data: [100, 20, 15, 50],
+            backgroundColor: ['#ffdab3','#ffc180','#ffa94d','#ff901a']
+        }]
+    },
+    options: {
+        title: {
+            display: true,
+            text: 'Categories Percentage',
+            fontSize: 25
+        },
+        cutoutPercentage: 50,
+        animation: {
+        animatedScale: true        
+        }
+    }
+});
+/////////////////////////////////////////////////////////////////////////////////////////////////
+var ctx = document.getElementById('barGraph');
+var BarGraph = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Sunday',"Monday", 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        datasets: [{
+            label: 'Sales of the Day',
+            data: [12, 19, 3, 5, 2, 3, 20],
+            backgroundColor: '#ff901a'
+        }]
+    }
+});
+</script>
 </html> 
