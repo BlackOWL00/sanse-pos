@@ -1,0 +1,82 @@
+.header{
+    color:#595959;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    
+}
+.header img{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+.header span{
+    font-family: 'lobster', cursive;
+    font-size: 35px;
+}
+.header a{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    color: inherit;
+    }
+.header a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+.sidebar{
+    background-color: whitesmoke;
+    height: 100%; 
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0; 
+    left: 0;
+    overflow-x: hidden; 
+    padding-top: 80px;
+    transition: 0.5s;
+}
+#sidebar-btn{
+    font-size: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.closebtn{
+    font-size: 40px;
+    margin-left: 280px;
+}
+.sidebarlogo{
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.sidebarlogo h1{
+    font-family: 'Fredoka One', cursive;
+}
+#circleimg{
+    margin: auto;
+    height: 190px;
+    width: 200px;
+    border-radius: 100px;
+}
+.list-group-item{
+    color:#595959;
+    text-align: left;
+    font-size: 30px;
+   font-family: 'Fredoka One', cursive;
+}
+.list-group-item:hover{
+    font-weight: 300;
+    color: white;
+    background-color: rgba(255, 159, 64, 1);
+}
+.list-group a, .list-group a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+.burger{
+    width: 17%;
+    display: inline-block;
+    vertical-align: top;
+}
