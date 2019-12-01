@@ -21,7 +21,7 @@ function fn_create_tables(mysqli $conn){
 	if(!$check_tbl_records){
 		$create_tbl_records = "CREATE TABLE tbl_records(
 		order_id INT AUTO_INCREMENT,
-		date_time TIMESTAMP default NOW(),
+		date_time TIMESTAMP NOT NULL,
 		ordered_item VARCHAR(255) NOT NULL,
 		order_qty INT NOT NULL,
 		transac_code VARCHAR(255) NOT NULL,
@@ -36,25 +36,24 @@ function fn_create_tables(mysqli $conn){
 		$create_tbl_transactions = "CREATE TABLE tbl_transactions(
 		transac_id INT AUTO_INCREMENT,
 		transac_code VARCHAR(255) NOT NULL,
-		date_time TIMESTAMP default NOW(),
+		date_time TIMESTAMP NOT NULL,
 		transac_total DECIMAL(6, 2),
 		PRIMARY KEY(transac_id)
 		)";
 	mysqli_query($conn, $create_tbl_transactions);
 	}
 	//ITEMS
-	$tbl_items = "SELECT * FROM tbl_items";
-	$check_tbl_items = mysqli_query($conn, $tbl_items);
-	if(!$check_tbl_items){
-		$create_tbl_items = "CREATE TABLE tbl_items(
-		items_id INT AUTO_INCREMENT,
-		items_name VARCHAR(255) NOT NULL,
-		items_price DECIMAL(3, 2),
-		items_category VARCHAR(255) NOT NULL
-		PRIMARY KEY(items_id)
+	$tbl_menuitem = "SELECT * FROM tbl_menuitem";
+	$check_tbl_menuitem = mysqli_query($conn, $tbl_menuitem);
+	if(!$check_tbl_menuitem){
+		$create_tbl_menuitem = "CREATE TABLE tbl_menuitem(
+		menuitem_id INT AUTO_INCREMENT,
+		menuitem_name VARCHAR(255) NOT NULL,
+		menuitem_price DECIMAL(3, 2) NOT NULL,
+		menuitem_category VARCHAR(255) NOT NULL
+		PRIMARY KEY(menuitem_id)
 		)";
-	mysqli_query($conn, $create_tbl_items);
-	}
-
+	mysqli_query($conn, $create_tbl_menuitem);
+	}    
 }
 ?>
