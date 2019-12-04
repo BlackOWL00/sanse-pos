@@ -1,5 +1,5 @@
 <?php
-require ('create-tables.php');
+require ("create-tables.php");
 	#connect to a database 
 $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, '');
 	#Check the connection
@@ -15,10 +15,14 @@ if(empty($db)){
 	if(!($check)){
 		echo "Database Create ERROR";
 	}else{
-		echo "Database Created!";
+		$message = "Database is Created";
+        echo "<script type='text/javascript'>alert('$message');</script>"; 
 		fn_create_tables($conn);
+		$message = "Tables are Created";
+		echo "<script type='text/javascript'>alert('$message');</script>";
 	}
 }else{
+	
 	fn_create_tables($conn);
 }
 ?>

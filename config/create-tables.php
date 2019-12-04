@@ -42,15 +42,16 @@ function fn_create_tables(mysqli $conn){
 		)";
 	mysqli_query($conn, $create_tbl_transactions);
 	}
-	//ITEMS
+	//ITEMS table
 	$tbl_menuitem = "SELECT * FROM tbl_menuitem";
 	$check_tbl_menuitem = mysqli_query($conn, $tbl_menuitem);
 	if(!$check_tbl_menuitem){
 		$create_tbl_menuitem = "CREATE TABLE tbl_menuitem(
 		menuitem_id INT AUTO_INCREMENT,
+		menuitem_image LONGBLOB NOT NULL,
 		menuitem_name VARCHAR(255) NOT NULL,
 		menuitem_price DECIMAL(3, 2) NOT NULL,
-		menuitem_category VARCHAR(255) NOT NULL
+		menuitem_category VARCHAR(255) NOT NULL,
 		PRIMARY KEY(menuitem_id)
 		)";
 	mysqli_query($conn, $create_tbl_menuitem);

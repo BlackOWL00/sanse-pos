@@ -1,7 +1,20 @@
 <?php
 require ("config/config.php");
 require ("config/db.php");
-
+if(isset($_POST["login"])){
+    $username = mysqli_real_escape_string($conn, $_POST["name"]);
+    $password = mysqli_real_escape_string($conn, $_POST["pw"]);
+    $select =  "SELECT * FROM tbl_accounts WHERE uname = '".$username."' AND pass = '".$password."'";
+    $check = mysqli_query($conn, $select);
+    if(mysqli_num_rows($check)){
+        header("Location: ".ROOT_URL."dashboard.php");
+        // echo "<script type='text/javascript'>alert('yahoo!')</script>";
+    }
+    else{
+        $message = "Invalid Email-Password Combination";
+        echo "<script type='text/javascript'>alert('$message');</script>";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,10 +39,11 @@ require ("config/db.php");
         </div>
         <div class="signin">
             <span class = "signinfont">Sign In</span>
-            <form method = 'POST' class="testform" action = "<?php echo $_SERVER['PHP_SELF'];?>">
-                <input type="text" name = "name" placeholder = "Username">
-                <input type="password" name = "pw" placeholder = "Password">
-                <button type="submit" name = "submit">Submit</button>
+            <form method = "POST" class="testform" 
+            action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
+                <input class = "cred" type="text" name = "name" placeholder = "Username">
+                <input class = "cred" type="password" name = "pw" placeholder = "Password">
+                <button name = "login">Login</button>
             </form>
         </div>
     </div>
@@ -79,7 +93,6 @@ require ("config/db.php");
         <span class="footnote">Send me an email: @alayaysantos@gmail.com</span><br>
         <a href="https://github.com/">Github  </a>
         <a href="https://www.facebook.com/soldierofsolitude">Facebook</a><br>
-        <span class="footnote">For old-fashions: 299 Shoe Avenue, Sto. Nino, Marikina City, Ph</span>
     </div>
 </body>
 </html>
