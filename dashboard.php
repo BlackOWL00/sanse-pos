@@ -18,10 +18,10 @@
         </div>
         <ul class="list-group">
             <a href="dashboard.php"><li class="list-group-item">Dashboard</li></a>
-            <a href="#"><li class="list-group-item">Point of Sales</li></a>
-            <a href="#"><li class="list-group-item">Items</li></a>
-            <a href="#"><li class="list-group-item">Records</li></a>
-            <a href="#"><li class="list-group-item">Settings</li></a>
+            <a href="pos.php"><li class="list-group-item">Point of Sales</li></a>
+            <a href="items.php"><li class="list-group-item">Items</li></a>
+            <a href="records.php"><li class="list-group-item">Records</li></a>
+            <a href="settings.php"><li class="list-group-item">Settings</li></a>
             <a href="javascript:void(0)" class="closebtn" onclick="fnCloseNav()">&times;</a>
         </ul>
 </div>
