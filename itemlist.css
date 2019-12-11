@@ -96,6 +96,36 @@ body{
     vertical-align: top;
 }
 .itemHeader img{
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 30px;
+}
+.itemHeader span{
+    font-family: 'lobster', cursive;
+    font-size: 55px;
+}
+.totheright{
+    float: right;
+    padding-top: 30px;
+    padding-right: 15px;
+}
+#filter, #order, #search, #addItem, .itemHeader label{
+    color: #595959;
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+}
+#addItem, .itemHeader label{
+    margin-left: 50px;
+}
+input, select{
+    border: 0;
+    border-bottom: 3px solid #dfa367;
+}
+input:focus, select:focus{
+    outline: none;
+}
+button{
+    border-radius: 50px;
+    color: #f2f2f2;
+    background-color: #dfa367;
 }
