@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href ="items.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script src="./js/vue.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Menu Items</title>
@@ -37,16 +36,21 @@
     <span id = "sidebar-btn" onclick = "fnOpenNav()">&#9776;</span>
     </div>
     <div class="itemHeader">
-        <span> Items</span>
-        <label for="filter">Filter</label>
-            <select name="filter" id="filter" v-model="filter">
+        <img src="img/milktea.svg" alt="Boomy">
+        <span>Items</span>
+        <div class="totheright">
+            <select name="filter" id="filter" v-model="filter" placeholder="Filter">
+                <option value="" disabled selected>Filter</option>
                 <option value="name">Name</option>
                 <option value="category">Category</option>
                 <option value="price">Price</option>
             </select>
             <button id = "order" @click="changeOrder()">{{order}}</button>
-            <input type="text" name="search" id="search" placeholder = "&#128270 Search" v-model="search">
-            <button id = "addItem" @click="showAddForm()">Add Item</button>
+            <label for="search">&#128270</label>
+            <input id="search" type="text" name="search" placeholder = "Search" v-model="search">
+            <button id = "addItem" @click="showAddForm()">&#43 Add Item</button>
+        </div>
+        <hr>
     </div>
 </div>
 <script>
@@ -54,8 +58,11 @@
         el: ".itemHeader",
         data: {
             filter: "",
-            order: "ASC",
+            order: "    ASC",
             search: ""
+        },
+        methods: {
+
         }
     })
 </script>
