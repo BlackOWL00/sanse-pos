@@ -104,6 +104,9 @@ body{
     font-family: 'lobster', cursive;
     font-size: 55px;
 }
+.itemHeader hr{
+    border: 3px dotted #dfa367;
+}
 .totheright{
     float: right;
     padding-top: 30px;
@@ -133,7 +136,4 @@ input:focus, select:focus{
     border-radius: 15px;
     color: #f2f2f2;
     background-color: #dfa367;
-}
-hr{
-    border: 3px solid #dfa367;
 }
