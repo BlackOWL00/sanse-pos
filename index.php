@@ -7,8 +7,9 @@ if(isset($_POST["login"])){
     $select =  "SELECT * FROM tbl_accounts WHERE uname = '".$username."' AND pass = '".$password."'";
     $check = mysqli_query($conn, $select);
     if(mysqli_num_rows($check)){
-        header("Location: ".ROOT_URL."dashboard.php");
-        // echo "<script type='text/javascript'>alert('yahoo!')</script>";
+        $message = 'Hi! '.$username;
+        echo "<script type='text/javascript'>alert('$message')</script>";
+        header("Location: ".ROOT_URL."dashboard.php"); 
     }
     else{
         $message = "Invalid Email-Password Combination";

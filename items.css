@@ -90,3 +90,8 @@ body{
     display: inline-block;
     vertical-align: top;
 }
+.itemHeader{
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+}
