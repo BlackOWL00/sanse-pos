@@ -51,17 +51,20 @@
             <button id = "addItem" @click="showAddForm()">&#43 Add Item</button>
         </div>
         <hr>
-    <div class="addForm">
-        <div class="newform">
+        <div class="addForm">
+            <form class="newform">
             <h1>Add Form</h1>
             <img v-bind:src="image" alt="Preview">
-            <input type="file" name="itemimage" id="itemimage" accept="image/*">
-            <input type="text" name="newitemname" id="newitemname" placeholder="Item">
-            <input type="text" name="newitemcat" id="newitemcat" placeholder="Category">
-            <input type="text" name="newitemprice" id="newitemprice" placeholder="Price">
+            <div class="rightform">
+                <input type="file" name="itemimage" id="itemimage" accept="image/*" v-model ="image"><br>
+                <input type="text" name="newitemname" id="newitemname" placeholder="Item"><br>
+                <input type="text" name="newitemcat" id="newitemcat" placeholder="Category"><br>
+                <input type="text" name="newitemprice" id="newitemprice" placeholder="Price"><br>
+                <button>Enter</button>
+            </div>        
+        </form>
         </div>
-    </div>
-    </div>
+</div>
 </div>
 <script>
     var app = new Vue({
@@ -70,7 +73,7 @@
             filter: "",
             order: "ASC",
             search: "",
-            image: '',
+            image: 'img/addimage.png',
         },
         methods: {
             changeOrder: function(){
