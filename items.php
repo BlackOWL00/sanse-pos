@@ -51,13 +51,13 @@
             <button id = "addItem" @click="showAddForm()">&#43 Add Item</button>
         </div>
         <hr>
-    </div>
     <div class="addForm">
         <div class="form">
             <h1>Add Form</h1>
             <img v-bind:src="image" alt="Preview">
             <input type="file" name="itemimage" id="" accept="image/*">
         </div>
+    </div>
     </div>
 </div>
 <script>
