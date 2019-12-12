@@ -55,7 +55,7 @@
         <div class="form">
             <h1>Add Form</h1>
             <img v-bind:src="image" alt="Preview">
-            <input type="file" name="itemimage" id="" accept="image/*">
+            <input type="file" name="itemimage" id="itemimage" accept="image/*">
         </div>
     </div>
     </div>
