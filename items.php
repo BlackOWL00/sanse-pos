@@ -56,7 +56,7 @@
             <h1>Add Form</h1>
             <img v-bind:src="image" alt="Preview">
             <div class="rightform">
-                <input type="file" name="itemimage" id="itemimage" accept="image/*" v-model ="image"><br>
+                <input type="file" name="itemimage" id="itemimage" @change="onFileSelected"><br>
                 <input type="text" name="newitemname" id="newitemname" placeholder="Item"><br>
                 <input type="text" name="newitemcat" id="newitemcat" placeholder="Category"><br>
                 <input type="text" name="newitemprice" id="newitemprice" placeholder="Price"><br>
@@ -73,7 +73,7 @@
             filter: "",
             order: "ASC",
             search: "",
-            image: 'img/addimage.png',
+            image: 'img/addimage.png'
         },
         methods: {
             changeOrder: function(){
@@ -81,6 +81,9 @@
             },
             showAddForm: function(){
 
+            },
+            onFileSelected: function(evt){
+                this.image = evt.target.files.src;
             }
         }
     })
