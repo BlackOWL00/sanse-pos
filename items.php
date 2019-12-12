@@ -52,10 +52,13 @@
         </div>
         <hr>
     <div class="addForm">
-        <div class="form">
+        <div class="newform">
             <h1>Add Form</h1>
             <img v-bind:src="image" alt="Preview">
             <input type="file" name="itemimage" id="itemimage" accept="image/*">
+            <input type="text" name="newitemname" id="newitemname" placeholder="Item">
+            <input type="text" name="newitemcat" id="newitemcat" placeholder="Category">
+            <input type="text" name="newitemprice" id="newitemprice" placeholder="Price">
         </div>
     </div>
     </div>
