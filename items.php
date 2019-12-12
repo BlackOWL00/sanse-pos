@@ -54,9 +54,9 @@
         <div class="addForm">
             <form class="newform">
             <h1>Add Form</h1>
-            <img v-bind:src="image" alt="Preview">
+            <img v-bind:src="image" alt="Preview" id = "preview">
             <div class="rightform">
-                <input type="file" name="itemimage" id="itemimage" @change="onFileSelected"><br>
+                <input type="file" name="itemimage" id="itemimage" accepts = "image/*" @change ="previewImage"><br>
                 <input type="text" name="newitemname" id="newitemname" placeholder="Item"><br>
                 <input type="text" name="newitemcat" id="newitemcat" placeholder="Category"><br>
                 <input type="text" name="newitemprice" id="newitemprice" placeholder="Price"><br>
@@ -79,11 +79,14 @@
             changeOrder: function(){
                 this.order == "ASC" ? this.order ="DESC" : this.order ="ASC";
             },
-            showAddForm: function(){
-
-            },
-            onFileSelected: function(evt){
-                this.image = evt.target.files.src;
+            previewImage: function(event){
+                if(event.files && event.files[0]){
+                    var reader = FileReader();
+                    reader.onload = function(e){
+                        document.getElementById("preview").src = e.target.result;
+                    }
+                    reader.readAsDataURL(event.files[0]);
+                }
             }
         }
     })
