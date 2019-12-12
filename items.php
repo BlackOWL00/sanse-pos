@@ -52,24 +52,36 @@
         </div>
         <hr>
     </div>
+    <div class="addForm">
+        <div class="form">
+            <h1>Add Form</h1>
+            <img v-bind:src="image" alt="Preview">
+            <input type="file" name="itemimage" id="" accept="image/*">
+        </div>
+    </div>
 </div>
 <script>
     var app = new Vue({
-        el: ".itemHeader",
+        el: ".main",
         data: {
             filter: "",
-            order: "    ASC",
-            search: ""
+            order: "ASC",
+            search: "",
+            image: '',
         },
         methods: {
+            changeOrder: function(){
+                this.order == "ASC" ? this.order ="DESC" : this.order ="ASC";
+            },
+            showAddForm: function(){
 
+            }
         }
     })
 </script>
 <script>
 function fnOpenNav(){
     document.getElementById("mySideNav").style.width = "335px";
-
 }
 
 function fnCloseNav(){
