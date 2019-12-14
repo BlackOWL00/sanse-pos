@@ -54,14 +54,14 @@
         <div class="addForm">
             <form class="newform">
             <h1>Add Form</h1>
-            <img v-bind:src="image" alt="Preview" id = "preview">
+            <img v-bind:src="image" alt="Preview" id = "preview" v-on:click="openUpload">
             <div class="rightform">
-                <input type="file" name="itemimage" id="itemimage" accepts = "image/*" @change ="previewImage"><br>
+                <input type="file" name="itemimage" id="itemimage" v-on:change ="previewImage"><br>
                 <input type="text" name="newitemname" id="newitemname" placeholder="Item"><br>
                 <input type="text" name="newitemcat" id="newitemcat" placeholder="Category"><br>
                 <input type="text" name="newitemprice" id="newitemprice" placeholder="Price"><br>
                 <button>Enter</button>
-            </div>        
+            </div>
         </form>
         </div>
 </div>
@@ -73,23 +73,32 @@
             filter: "",
             order: "ASC",
             search: "",
-            image: 'img/addimage.png'
+            image: 'img/addimage.png'   
         },
         methods: {
             changeOrder: function(){
                 this.order == "ASC" ? this.order ="DESC" : this.order ="ASC";
             },
-            previewImage: function(event){
-                if(event.files && event.files[0]){
-                    var reader = FileReader();
-                    reader.onload = function(e){
-                        document.getElementById("preview").src = e.target.result;
-                    }
-                    reader.readAsDataURL(event.files[0]);
-                }
+            openUpload: function(){
+                document.getELementById("itemimage").click();
+            },
+            previewImage: function(e){
+                var reader, files = e.target.files;
+                if(files.length===0){
+                    console.log("empty");
+                };
+
+                reader = new FileReader();
+                
+                reader.onload = (e) => {
+                    this.image = e.target.result;
+                };
+
+                reader.readAsDataURL(files[0]);
             }
         }
-    })
+    }
+})
 </script>
 <script>
 function fnOpenNav(){
