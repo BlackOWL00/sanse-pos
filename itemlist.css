@@ -155,8 +155,6 @@ input:focus, select:focus{
     height: 200px;
     margin:  auto;
 }
-.form-group{
-    align-content: center;
-    width: 600px;
+.form-group input{
     margin: auto;
 }
