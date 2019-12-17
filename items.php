@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <link rel="stylesheet" href ="itemlist.css">
     <script src="./js/vue.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Menu Items</title>
@@ -54,14 +54,23 @@
         <div class="addForm">
             <form class="newform">
             <h1>Add Form</h1>
-            <img v-bind:src="image" alt="Preview" id = "preview" v-on:click="openUpload">
-            <div class="rightform">
-                <input type="file" name="itemimage" id="itemimage" v-on:change ="previewImage"><br>
+            <img v-bind:src="image" alt="Preview" id = "preview">
+            <div class="rightform form-group">
+                <input type="file" name="itemimage" id="itemimage"><br>
+            </div>
+            <div class="rightform form-group">    
                 <input type="text" name="newitemname" id="newitemname" placeholder="Item"><br>
+            </div>
+            <div class="rightform form-group">    
                 <input type="text" name="newitemcat" id="newitemcat" placeholder="Category"><br>
+            </div>
+            <div class="rightform form-group">
                 <input type="text" name="newitemprice" id="newitemprice" placeholder="Price"><br>
+            </div>
+            <div class="rightform form-group">    
                 <button>Enter</button>
             </div>
+            
         </form>
         </div>
 </div>
@@ -73,7 +82,7 @@
             filter: "",
             order: "ASC",
             search: "",
-            image: 'img/addimage.png'   
+            image: "img/addimage.png"
         },
         methods: {
             changeOrder: function(){
