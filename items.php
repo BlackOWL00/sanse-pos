@@ -54,20 +54,19 @@
         <div class="addForm">
             <form class="newform">
             <h1>Add Form</h1>
-            <img v-bind:src="image" alt="Preview" id = "preview">
-            <div class="rightform form-group">
+            <div class="form-group">
                 <input type="file" name="itemimage" id="itemimage"><br>
             </div>
-            <div class="rightform form-group">    
+            <div class="form-group">    
                 <input type="text" name="newitemname" id="newitemname" placeholder="Item"><br>
             </div>
-            <div class="rightform form-group">    
+            <div class="form-group">    
                 <input type="text" name="newitemcat" id="newitemcat" placeholder="Category"><br>
             </div>
-            <div class="rightform form-group">
+            <div class="form-group">
                 <input type="text" name="newitemprice" id="newitemprice" placeholder="Price"><br>
             </div>
-            <div class="rightform form-group">    
+            <div class="form-group">    
                 <button>Enter</button>
             </div>
             
@@ -76,18 +75,17 @@
 </div>
 </div>
 <script>
-    var app = new Vue({
-        el: ".main",
-        data: {
-            filter: "",
-            order: "ASC",
-            search: "",
-            image: "img/addimage.png"
-        },
-        methods: {
-            changeOrder: function(){
-                this.order == "ASC" ? this.order ="DESC" : this.order ="ASC";
-            }
+var app = new Vue({
+     el: ".main",
+     data: {
+        filter: "",
+        order: "ASC",
+        search: "",
+        image: "img/addimage.png"
+    },
+    methods: {
+        changeOrder: function(){
+            this.order == "ASC" ? this.order ="DESC" : this.order ="ASC";            
         }
     }
 })

@@ -149,19 +149,14 @@ input:focus, select:focus{
     width: 600px;
     border-color: #dfa367;
 }
-.newform h1{
+.newform{
     text-align: center;
+    width: 200px;
+    height: 200px;
+    margin:  auto;
 }
-.newform img{
-    float: left;
-    width: 250px;
-    height: 250px;
-}
-.rightform input{
-    margin-left: 20px;
-    margin-bottom: 20px;
-    float: left;
-}
-.rightform #itemimage{
-    display: none;
+.form-group{
+    align-content: center;
+    width: 600px;
+    margin: auto;
 }
