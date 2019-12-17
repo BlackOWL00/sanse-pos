@@ -78,23 +78,6 @@
         methods: {
             changeOrder: function(){
                 this.order == "ASC" ? this.order ="DESC" : this.order ="ASC";
-            },
-            openUpload: function(){
-                document.getELementById("itemimage").click();
-            },
-            previewImage: function(e){
-                var reader, files = e.target.files;
-                if(files.length===0){
-                    console.log("empty");
-                };
-
-                reader = new FileReader();
-                
-                reader.onload = (e) => {
-                    this.image = e.target.result;
-                };
-
-                reader.readAsDataURL(files[0]);
             }
         }
     }
