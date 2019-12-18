@@ -137,7 +137,7 @@ input:focus, select:focus{
     background-color: #dfa367;
 }
 .addform{
-    display: block;
+    display: none;
     padding-top: 20px;
 }
 .newform{

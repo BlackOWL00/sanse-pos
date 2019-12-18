@@ -56,16 +56,16 @@
             <h1>Add Item</h1>
             <img src='img/addimage.png' id="preview" alt="Preview" v-on:click="imageClicked"/>
             <div class="form-group">
-                <input type="file" name="itemimage" id="itemImage" style = "width: 180px" @input ="changeImage($event)"><br>
+                <input type="file" name="itemimage" id="itemImage" style = "width: 180px" @input ="changeImage($event)" required><br>
+            </div>  
+            <div class="form-group">    
+                <input type="text" name="newitemname" id="newitemname" placeholder="Item" required><br>
             </div>
             <div class="form-group">    
-                <input type="text" name="newitemname" id="newitemname" placeholder="Item"><br>
-            </div>
-            <div class="form-group">    
-                <input type="text" name="newitemcat" id="newitemcat" placeholder="Category"><br>
+                <input type="text" name="newitemcat" id="newitemcat" placeholder="Category" required><br>
             </div>
             <div class="form-group">
-                <input type="text" name="newitemprice" id="newitemprice" placeholder="Price"><br>
+                <input type="text" name="newitemprice" id="newitemprice" placeholder="Price" required><br>
             </div>
             <div class="form-group">    
                 <button>Enter</button>
