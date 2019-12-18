@@ -138,7 +138,6 @@ input:focus, select:focus{
 }
 .addform{
     display: block;
-    height: 50%;
     padding-top: 20px;
 }
 .newform{
@@ -155,6 +154,14 @@ input:focus, select:focus{
     height: 200px;
     margin:  auto;
 }
+.newform img{
+    margin-bottom: 10px;
+    width: 180px;
+    height: 180px;
+}
 .form-group input{
     margin: auto;
+}
+#itemimage{
+    display: none;
 }

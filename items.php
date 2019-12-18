@@ -53,9 +53,10 @@
         <hr>
         <div class="addForm">
             <form class="newform">
-            <h1>Add Form</h1>
+            <h1>Add Item</h1>
+            <img src="img/addimage.png" alt="Preview">
             <div class="form-group">
-                <input type="file" name="itemimage" id="itemimage"><br>
+                <input type="file" name="itemimage" id="itemimage" style = "width: 180px"><br>
             </div>
             <div class="form-group">    
                 <input type="text" name="newitemname" id="newitemname" placeholder="Item"><br>
@@ -86,6 +87,9 @@ var app = new Vue({
     methods: {
         changeOrder: function(){
             this.order == "ASC" ? this.order ="DESC" : this.order ="ASC";            
+        },
+        imageClicked: function(){
+            
         }
     }
 })
