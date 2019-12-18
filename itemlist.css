@@ -162,6 +162,6 @@ input:focus, select:focus{
 .form-group input{
     margin: auto;
 }
-#itemimage{
+#itemImage{
     display: none;
 }

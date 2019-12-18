@@ -54,9 +54,9 @@
         <div class="addForm">
             <form class="newform">
             <h1>Add Item</h1>
-            <img src="img/addimage.png" alt="Preview">
+            <img src='img/addimage.png' id="preview" alt="Preview" v-on:click="imageClicked"/>
             <div class="form-group">
-                <input type="file" name="itemimage" id="itemimage" style = "width: 180px"><br>
+                <input type="file" name="itemimage" id="itemImage" style = "width: 180px" @input ="changeImage($event)"><br>
             </div>
             <div class="form-group">    
                 <input type="text" name="newitemname" id="newitemname" placeholder="Item"><br>
@@ -70,7 +70,6 @@
             <div class="form-group">    
                 <button>Enter</button>
             </div>
-            
         </form>
         </div>
 </div>
@@ -81,18 +80,29 @@ var app = new Vue({
      data: {
         filter: "",
         order: "ASC",
-        search: "",
-        image: "img/addimage.png"
+        search: ""
     },
     methods: {
         changeOrder: function(){
             this.order == "ASC" ? this.order ="DESC" : this.order ="ASC";            
         },
         imageClicked: function(){
-            
+            var openF = document.getElementById("itemImage");
+            openF.click();
+        },
+        changeImage: function(event){
+            var reader, files = event.target.files;
+            var preview = document.getElementById('preview');
+            if(files){
+                reader = new FileReader();
+                reader.onload = function(event){
+                     preview.setAttribute("src", event.target.result);
+                }
+            }
+            reader.readAsDataURL(files[0]);
         }
     }
-})
+});
 </script>
 <script>
 function fnOpenNav(){
