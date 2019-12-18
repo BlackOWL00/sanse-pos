@@ -48,10 +48,10 @@
             <button id = "order" @click="changeOrder()">{{order}}</button>
             <label for="search">&#128270</label>
             <input id="search" type="text" name="search" placeholder = "Search" v-model="search">
-            <button id = "addItem" @click="showAddForm()">&#43 Add Item</button>
+            <button id = "addItem" @click="toggleAddForm()">&#43 Add Item</button>
         </div>
         <hr>
-        <div class="addForm">
+        <div class="addForm" v-show = "showSection">
             <form class="newform">
             <h1>Add Item</h1>
             <img src='img/addimage.png' id="preview" alt="Preview" v-on:click="imageClicked"/>
@@ -78,9 +78,11 @@
 var app = new Vue({
      el: ".main",
      data: {
+       showSection: "true",
         filter: "",
         order: "ASC",
-        search: ""
+        search: "",
+        dispForm: "none"
     },
     methods: {
         changeOrder: function(){
@@ -89,6 +91,9 @@ var app = new Vue({
         imageClicked: function(){
             var openF = document.getElementById("itemImage");
             openF.click();
+        },
+        toggleAddForm: function(){
+            this.showSection = !this.showSection;
         },
         changeImage: function(event){
             var reader, files = event.target.files;
