@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +49,7 @@
             <input id="search" type="text" name="search" placeholder = "Search" v-model="search">
             <button id = "addItem" @click="toggleAddForm()">&#43 Add Item</button>
         </div>
-        <hr>
+        <hr style = "margin-bottom: 0px;">
         <div class="addForm" v-show = "!showSection">
             <div class="newform">
             <form method="POST">
@@ -69,12 +68,12 @@
                 <input type="text" name="newitemprice" id="newitemprice" placeholder="Price" required><br>
             </div>
             <div class="form-group">    
-                <button>Enter</button>
+                <button name = "submit">Enter</button>
             </div>
         </form>
         </div>
         </div>
-        <hr>
+        <hr style = "margin-top: 0px;">
 </div>
 </div>
 <script>
