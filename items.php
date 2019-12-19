@@ -51,8 +51,9 @@
             <button id = "addItem" @click="toggleAddForm()">&#43 Add Item</button>
         </div>
         <hr>
-        <div class="addForm" v-show = "showSection">
-            <form class="newform">
+        <div class="addForm" v-show = "!showSection">
+            <div class="newform">
+            <form method="POST">
             <h1>Add Item</h1>
             <img src='img/addimage.png' id="preview" alt="Preview" v-on:click="imageClicked"/>
             <div class="form-group">
@@ -72,13 +73,15 @@
             </div>
         </form>
         </div>
+        </div>
+        <hr>
 </div>
 </div>
 <script>
 var app = new Vue({
      el: ".main",
      data: {
-       showSection: "true",
+        showSection: "true",
         filter: "",
         order: "ASC",
         search: "",

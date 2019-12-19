@@ -92,6 +92,7 @@ body{
 }
 .itemHeader{
     width: 70%;
+    height: 700px;
     display: inline-block;
 }
 .itemHeader img{
@@ -136,8 +137,9 @@ input:focus, select:focus{
     color: #f2f2f2;
     background-color: #dfa367;
 }
-.addform{
+.addForm{
     padding-top: 20px;
+    height: 520px;
 }
 .newform{
     position: relative;
@@ -150,7 +152,7 @@ input:focus, select:focus{
 .newform{
     text-align: center;
     width: 200px;
-    height: 200px;
+    height: 500px;
     margin:  auto;
 }
 .newform img{
