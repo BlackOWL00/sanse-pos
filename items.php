@@ -1,6 +1,19 @@
 <?php
 require ("config/config.php");
 require ("config/db.php");
+if(isset($_POST["submit"])){
+    
+    $checkimage = getimagesize($_FILES['itemimage']['name']);
+    $name = mysqli_real_escape_string($conn, $_POST["newitemname"]);
+    $cat = mysqli_real_escape_string($conn, $_POST["newitemcat"]);
+    $price = mysqli_real_escape_string($conn, $_POST["newitemprice"]);
+    if($checkimage !== false){
+        $image = $_FILES['itemimage']['tmp_name'];
+        $imgcont = addslashes(file_get_contents($image));
+        $insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES('$imgcont', '$name', '$price', '$cat');";
+        mysqli_query($conn, $insert);
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
