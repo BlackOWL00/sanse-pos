@@ -164,5 +164,5 @@ input:focus, select:focus{
     margin: auto;
 }
 #itemImage{
-    display: block;
+    display: none;
 }

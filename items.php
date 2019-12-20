@@ -2,14 +2,14 @@
 require ("config/config.php");
 require ("config/db.php");
 if(isset($_POST["submit"])){
-    $checkimage = getimagesize($_FILES["newimage"]["tmp_name"]);
+    $checkimage = getimagesize($_FILES["file"]["tmp_name"]);
     $name = mysqli_real_escape_string($conn, $_POST["newitemname"]);
     $cat = mysqli_real_escape_string($conn, $_POST["newitemcat"]);
     $price = mysqli_real_escape_string($conn, $_POST["newitemprice"]);
     if($checkimage !== false){
-        $image = $_FILES["newimage"]["tmp_name"];
+        $image = $_FILES["file"]["tmp_name"];
         $imgcont = addslashes(file_get_contents($image));
-        $insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES('$imgcont', '$name', '$price', '$cat')";
+        $insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES($imgcont, $name, $price, $cat)";
         mysqli_query($conn, $insert);
     }
 }
@@ -68,7 +68,7 @@ if(isset($_POST["submit"])){
         <hr style = "margin-bottom: 0px;">
         <div class="addForm" v-show = "!showSection">
             <div class="newform">
-            <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype=multipart/form-data>
             <h1>Add Item</h1>
             <img src='img/addimage.png' id="preview" alt="Preview" v-on:click="imageClicked"/>
             <div class="form-group">
