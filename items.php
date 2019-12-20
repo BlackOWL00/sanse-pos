@@ -1,6 +1,9 @@
 <?php
 require ("config/config.php");
 require ("config/db.php"); 
+$select = "SELECT * FROM tbl_menuitem";
+$result = mysqli_query($conn, $select);
+$items = mysqli_fetch_assoc($result);
 if(isset($_POST["submit"])){
     $checkimage = getimagesize($_FILES["file"]["tmp_name"]);
     $name = mysqli_real_escape_string($conn, $_POST["newitemname"]);
@@ -95,7 +98,9 @@ if(isset($_POST["submit"])){
         </div>
         <hr style = "margin-top: 0px;">
         <div class="vueListWrapper">
-            <div class="vueList" v-for></div>
+            <div class="vueList" v-for ="item in items">
+                {{id}}
+            </div>
         </div>
     </div>
 </div>
@@ -106,13 +111,7 @@ var app = new Vue({
         showSection: "true",
         filter: "",
         order: "ASC",
-        search: "",
-        items: [
-            <?php
-                $select = "SELECT * FROM tbl_menuitem";
-                $result = mysqli_query($conn, $select);
-            ?>
-        ]
+        search: ""
     },
     methods: {
         changeOrder: function(){
