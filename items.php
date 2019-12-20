@@ -9,6 +9,11 @@ if(isset($_POST["submit"])){
     if($checkimage !== false){
         $image = $_FILES["file"]["tmp_name"];
         $imgcont = addslashes(file_get_contents($image));
+        $insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES('$image', '$name', 'intval($price', '$cat')";
+        mysqli_query($conn, $insert);
+    }else{
+        $image = $_FILES["file"]["tmp_name"];
+        $imgcont = addslashes(file_get_contents($image));
         $insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES($imgcont, $name, $price, $cat)";
         mysqli_query($conn, $insert);
     }
