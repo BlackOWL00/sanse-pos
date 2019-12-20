@@ -72,8 +72,7 @@ if(isset($_POST["submit"])){
             <h1>Add Item</h1>
             <img src='img/addimage.png' id="preview" alt="Preview" v-on:click="imageClicked"/>
             <div class="form-group">
-                
-            </div>  
+                <input type="file" name="file" id="itemImage" @input ="changeImage($event)" required><br>            </div>  
             <div class="form-group">    
                 <input type="text" name="newitemname" id="newitemname" placeholder="Item" required><br>
             </div>
