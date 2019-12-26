@@ -30,6 +30,7 @@ if(isset($_POST["submit"])){
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href ="itemlist.css">
     <script src="./js/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Menu Items</title>
 </head>
@@ -98,20 +99,32 @@ if(isset($_POST["submit"])){
         </div>
         <hr style = "margin-top: 0px;">
         <div class="vueListWrapper">
-            <div class="vueList" v-for ="item in items">
-                {{id}}
+        <div class="vueList" v-for ="item in items">
+                {{item.menuitem_name}}
             </div>
         </div>
     </div>
 </div>
 <script>
+
 var app = new Vue({
      el: ".main",
      data: {
         showSection: "true",
         filter: "",
         order: "ASC",
-        search: ""
+        search: "",
+        items: []
+    },
+    mounted: function(){
+        axios.get('getItems.php')
+        .then(function (response) {
+            console.log(response.data);
+            app.items = response.data;
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     },
     methods: {
         changeOrder: function(){
