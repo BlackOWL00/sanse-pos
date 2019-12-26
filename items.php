@@ -100,13 +100,14 @@ if(isset($_POST["submit"])){
         <hr style = "margin-top: 0px;">
         <div class="vueListWrapper">
         <div class="vueList" v-for ="item in items">
-                {{item.menuitem_name}}
+            <div>
+            {{item.menuitem_name}}
             </div>
+        </div>
         </div>
     </div>
 </div>
 <script>
-
 var app = new Vue({
      el: ".main",
      data: {
@@ -114,13 +115,24 @@ var app = new Vue({
         filter: "",
         order: "ASC",
         search: "",
-        items: []
+        items: [],
+        originalItems: []
+    },
+    watch: {
+        search: function(){
+            if(this.search.trim() != "" ){
+                app.items = app.originalItems.filter(item => item.menuitem_name.includes(this.search.trim()));
+                console.log("item filtered");
+            }else{
+                app.items = app.originalItems;
+            }
+        }
     },
     mounted: function(){
         axios.get('getItems.php')
         .then(function (response) {
             console.log(response.data);
-            app.items = response.data;
+            app.originalItems = app.items = response.data;
         })
         .catch(function (error) {
             console.log(error);
