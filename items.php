@@ -100,8 +100,9 @@ if(isset($_POST["submit"])){
         <hr style = "margin-top: 0px;">
         <div class="vueListWrapper">
         <div class="vueList" v-for ="item in items">
-            <div>
-            {{item.menuitem_name}}
+            <div class = "itemdata">
+                <img :src="data:image/jpeg;base64,".base64_encode(item.menuitem_image) alt="">
+                 {{item.menuitem_name}}
             </div>
         </div>
         </div>
