@@ -26,6 +26,8 @@ if(isset($_POST["submit"])){
                 $fileNewName = uniqid("", true).".".$fileActualExt;
                 $fileDestination = "img/uploads/".$fileNewName;
                 move_uploaded_file($fileTmpName, $fileDestination);
+                $insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES('$fileDestination', '$name', $price, '$cat')";
+                mysqli_query($conn, $insert);
                 header("Location: items.php?uploadsuccess");
             }else{
                 echo "Image file is too large";
@@ -36,8 +38,7 @@ if(isset($_POST["submit"])){
     }else{
         echo "Invalid file type";
     }
-    //$insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES('$image', '$name', $price, '$cat')";
-    // mysqli_query($conn, $insert);
+    
 
 
 }
@@ -121,7 +122,8 @@ if(isset($_POST["submit"])){
         <div class="vueListWrapper">
         <div class="vueList" v-for ="item in items">
             <div class = "itemdata">
-                 {{item.menuitem_name}} 
+                <img :src=item.menuitem_image alt="boomy">
+                <p>{{item.menuitem_name}}</p> 
             </div>
         </div>
         </div>
