@@ -166,3 +166,6 @@ input:focus, select:focus{
 #itemImage{
     display: none;
 }
+.vueListWrapper{
+    width: 100%;
+}
