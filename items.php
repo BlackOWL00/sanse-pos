@@ -120,12 +120,22 @@ if(isset($_POST["submit"])){
         </div>
         <hr style = "margin-top: 0px;">
         <div class="vueListWrapper">
-        <div class="vueList" v-for ="item in items">
-            <div class = "itemdata">
-                <img :src=item.menuitem_image alt="boomy">
-                <p>{{item.menuitem_name}}</p> 
-            </div>
-        </div>
+            <table class = "itemdata" style = "width: 100%;">
+               <tr>
+                    <th></th>
+                    <th>image</th>
+                    <th>item</th>
+                    <th>price</th>
+                    <th>category</th>
+               </tr>
+               <tr v-for ="item in items">
+                   <td><h6>Temp Filler</h6></td>
+                   <td><img :src=item.menuitem_image alt="boomy"></td>
+                   <td><h6>{{item.menuitem_name}}</h6></td>
+                   <td><h6>{{item.menuitem_price}}</h6></td>
+                   <td><h6>{{item.menuitem_category}}</h6></td>
+               </tr>
+            </table>
         </div>
     </div>
 </div>
