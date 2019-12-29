@@ -48,7 +48,7 @@ function fn_create_tables(mysqli $conn){
 	if(!$check_tbl_menuitem){
 		$create_tbl_menuitem = "CREATE TABLE tbl_menuitem(
 		menuitem_id INT AUTO_INCREMENT,
-		menuitem_image LONGBLOB NOT NULL,
+		menuitem_image VARCHAR(255) NOT NULL,
 		menuitem_name VARCHAR(255) NOT NULL,
 		menuitem_price DECIMAL(5, 2) NOT NULL,
 		menuitem_category VARCHAR(255) NOT NULL,

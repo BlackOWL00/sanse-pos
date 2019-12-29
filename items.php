@@ -5,21 +5,41 @@ $select = "SELECT * FROM tbl_menuitem";
 $result = mysqli_query($conn, $select);
 $items = mysqli_fetch_assoc($result);
 if(isset($_POST["submit"])){
-    $checkimage = getimagesize($_FILES["file"]["tmp_name"]);
+    
     $name = mysqli_real_escape_string($conn, $_POST["newitemname"]);
     $cat = mysqli_real_escape_string($conn, $_POST["newitemcat"]);
     $price = mysqli_real_escape_string($conn, $_POST["newitemprice"]);
-    if($checkimage !== false){
-        $image = $_FILES["file"]["tmp_name"];
-        $imgcont = addslashes(file_get_contents($image));
-        $insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES('$image', '$name', $price, '$cat')";
-        mysqli_query($conn, $insert);
+
+    //file upload initiation//
+    $fileName = $_FILES["file"]["name"];
+    $fileTmpName = $_FILES["file"]["tmp_name"];
+    $fileSize = $_FILES["file"]["size"];
+    $fileError = $_FILES["file"]["error"];
+    $fileType = $_FILES["file"]["type"];
+    $fileExt = explode(".", $fileName);
+    $fileActualExt = strtolower(end($fileExt));
+    $allowed = array('jpeg', 'jpg', 'png', 'svg');
+
+    if(in_array($fileActualExt, $allowed)){
+        if($fileError === 0){
+            if($fileSize < 500000){
+                $fileNewName = uniqid("", true).".".$fileActualExt;
+                $fileDestination = "img/uploads/".$fileNewName;
+                move_uploaded_file($fileTmpName, $fileDestination);
+                header("Location: items.php?uploadsuccess");
+            }else{
+                echo "Image file is too large";
+            }
+        }else{
+            echo "An error occurred";
+        }
     }else{
-        $image = $_FILES["file"]["tmp_name"];
-        $imgcont = addslashes(file_get_contents($image));
-        $insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES($imgcont, $name, $price, $cat)";
-        mysqli_query($conn, $insert);
+        echo "Invalid file type";
     }
+    //$insert =  "INSERT INTO tbl_menuitem (menuitem_image, menuitem_name, menuitem_price, menuitem_category) VALUES('$image', '$name', $price, '$cat')";
+    // mysqli_query($conn, $insert);
+
+
 }
 ?>
 <!DOCTYPE html>
@@ -101,8 +121,7 @@ if(isset($_POST["submit"])){
         <div class="vueListWrapper">
         <div class="vueList" v-for ="item in items">
             <div class = "itemdata">
-                <img :src="data:image/jpeg;base64,".base64_encode(item.menuitem_image) alt="">
-                 {{item.menuitem_name}}
+                 {{item.menuitem_name}} 
             </div>
         </div>
         </div>
