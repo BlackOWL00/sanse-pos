@@ -84,17 +84,10 @@ if(isset($_POST["submit"])){
         <img src="img/milktea.svg" alt="Boomy">
         <span>Items</span>
         <div class="totheright">
-            <select name="filter" id="filter" v-model="filter" placeholder="Filter">
-                <option value="" disabled selected>Filter</option>
-                <option value="name">Name</option>
-                <option value="category">Category</option>
-                <option value="price">Price</option>
-            </select>
-            <button id = "order" @click="changeOrder()">{{order}}</button>
             <label for="search">&#128270</label>
             <input id="search" type="text" name="search" placeholder = "Search" v-model="search">
             <button id = "addItem" @click="toggleAddForm()">&#43 Add Item</button>
-        </div>
+        </div>      
         <hr style = "margin-bottom: 0px;">
         <div class="addForm" v-show = "!showSection">
             <div class="newform">
@@ -119,9 +112,9 @@ if(isset($_POST["submit"])){
         </div>
         </div>
         <hr style = "margin-top: 0px;">
-        <div class="vueListWrapper">
-            <table class = "itemData" style = "width : 100%;">
-               <tr>
+        <div class="vueListWrapper" style="border: 2px solid #dfa367;">
+            <table class = "itemData" style = "width: 100%;">
+               <tr style="font-size: 30px; background-color: #dfa367; color: white;">
                     <th></th>
                     <th>Image</th>
                     <th>Item name</th>
@@ -129,7 +122,11 @@ if(isset($_POST["submit"])){
                     <th>Category</th>
                </tr>
                <tr v-for ="item in items">
-                   <td><h6>Temp Filler</h6></td>
+                   <td>
+                   <button id="delete" style="margin-left: 15px;">&#x1f5d1;</button>
+                   <button id="edit">Edit</button>
+                   {{item.menuitem_id}}.
+                   </td>
                    <td><img :src=item.menuitem_image alt="boomy"></td>
                    <td><h6>{{item.menuitem_name}}</h6></td>
                    <td><h6>{{item.menuitem_price}}</h6></td>
@@ -145,7 +142,6 @@ var app = new Vue({
      data: {
         showSection: "true",
         filter: "",
-        order: "ASC",
         search: "",
         items: [],
         originalItems: []
@@ -171,9 +167,6 @@ var app = new Vue({
         });
     },
     methods: {
-        changeOrder: function(){
-            this.order == "ASC" ? this.order ="DESC" : this.order ="ASC";            
-        },
         imageClicked: function(){
             var openF = document.getElementById("itemImage");
             openF.click();

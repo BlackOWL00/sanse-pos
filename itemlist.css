@@ -168,4 +168,8 @@ input:focus, select:focus{
 }
 .vueListWrapper{
     width: 100%;
+    border: 2px solid #dfa367;
+}
+tr{
+    font-family: 'Fredoka One', cursive;
 }
